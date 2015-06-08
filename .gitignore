@@ -1,0 +1,7 @@
+autoload
+backup
+bundle
+swap
+undo
+viminfo
+.netrwhist
