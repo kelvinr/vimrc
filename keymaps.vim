@@ -1,3 +1,16 @@
+:let mapleader = ";"
+inoremap<Leader>; ;
+inoremap fd <Esc>
+
+inoremap <Leader>l <C-O>l
+inoremap <Leader>h <C-O>h
+
+noremap <Leader>w :w<CR>
+noremap <Leader>q :q<CR>
+noremap <Leader>x :x<CR>
+
+map <C-j> %
+
 " Insert line in Normal-mode
 nnoremap <M-u> o<ESC>
 nnoremap <M-i> O<ESC>
@@ -12,23 +25,23 @@ vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " System clipboard
-nnoremap <Leader>p "*p
-nnoremap <Leader>y "*y
-nnoremap <Leader>d "*d
+nnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
+nnoremap <Leader>d "+d
 
 map <Leader>o :set hlsearch!<CR>
 map <C-n> :NERDTreeToggle<CR>
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <Leader>b :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Ruby hash syntax conversion
 nnoremap <F12> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<return>
 
 " Buffer switching
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>

@@ -14,6 +14,7 @@ endw
 set timeout ttimeoutlen=50
 
 filetype plugin indent on
+autocmd Filetype html set omnifunc=htmlcomplete#CompleteTags
 autocmd Filetype ruby let g:SuperTabDefaultCompletionType='context'
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
