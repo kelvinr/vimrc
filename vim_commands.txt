@@ -1,20 +1,25 @@
 --Basic Commands--
 
 0-9 -> Number modifier
+~ -> Switch case
+0 -> Beginning of line
+^ -> first character on line(non-blank)
 i -> insert before letter
 I -> insert beginning line
 a -> append after letter
+ea -> append after word
 A -> append after line
 o -> opens a new line after the current line
 O -> opens a new line before current line
-r -> replace a single character
+s -> substitue a single character(goes into insert mode)
+r -> replace a single character(remains in normal mode)
 R -> replace all following characters
-w -> to next word
-W -> to next word(not worrying about symbols)
-b -> back a word
-B -> back a word(not worrying about symbols)
-e -> move to the end of the word
-E -> move to the end of the word(not worrying about symbols)
+w -> to next word(punctuation considered words)
+W -> to next word(spaces separate words)
+b -> back a word(punctuation considered words)
+B -> back a word(spaces separate words)
+e -> move to the end of the word(punctuation considered words)
+E -> move to the end of the word(no punctuation)
 c -> change whatever specified(takes a motion)
 C -> change to the end of the line
 x -> delete charater underneath cursor
@@ -25,6 +30,9 @@ y -> yanks whatever we specify(takes a motion)
 Y -> yanks the current line
 p -> pastes after the cursor position
 P -> pastes before the cursor position
+xp -> switch character under cursor and character to the right
+v -> visual mode(inline)
+V -> visual mode(linewise)
 m -> places a marker on current location(takes a char-variable)
 ' -> succeeds a motion and takes a marker
 = -> reindents block
@@ -32,6 +40,12 @@ m -> places a marker on current location(takes a char-variable)
 < -> decrease indent
 zz -> move current line to middle
 zt -> move current line to start
+
+/pattern -> search for pattern
+?pattern -> backward search
+n -> repeat search in same direction
+N -> in opposite direction
+%s/old/new/g -> globally replace old with new
 
 --Cool Tricks--
 
@@ -46,6 +60,12 @@ ci" -> Change all between double quotes, same format for Yank and Delete
 Delete till or before character
 df! -> Delete until and including exclamation mark (F -> Delete back including char)
 dt! -> Delete until and not including exclmation mark (T -> Delete back until char)
+
+:r -> read file into current buffer
+
+:%s/\s\(-\l\)/\r\1/g -> replace space for newline and capture group when space is followed by -\l
+\l -> any lowercase letter
+:%s/(FOO).*$/\1/ -> delete text after capture group
 
 --General Purpose Mappings--
 

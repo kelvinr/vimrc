@@ -43,7 +43,7 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 
 autocmd Filetype rb nnoremap <buffer> <F4> ^i#<Esc> 
 autocmd Filetype rb inoremap <buffer> <F4> <C-O>I#
-autocmd Filetype rb vnoremap <buffer> <F4> :s/^/#/<CR>
+autocmd Filetype rb vnoremap <buffer> <F4> :s/^/# /<CR>
 
 autocmd Filetype js,jsx nnoremap <buffer> <F4> ^i//<Esc> 
 autocmd Filetype js,jsx inoremap <buffer> <F4> <C-O>I//

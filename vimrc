@@ -2,6 +2,7 @@ set nocompatible
 runtime vundles.vim
 runtime keymaps.vim
 runtime rails.vim
+set exrc
 
 " Fix Meta key when no 8bit encoding
 let c='a'
@@ -14,26 +15,29 @@ endw
 set timeout ttimeoutlen=50
 
 filetype plugin indent on
-autocmd Filetype html set omnifunc=htmlcomplete#CompleteTags
-autocmd Filetype ruby let g:SuperTabDefaultCompletionType='context'
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
+let g:html_indent_inctags = "html,body,head,tbody,p,li" 
+
+let g:AutoPairsShortcutBackInsert = '<M-a>'
+let g:AutoPairsShortcutFastWrap = '<Leader>d'
+let g:AutoPairs = {'|':'|', '(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
+
+inoremap <Leader>d <CR><CR><C-O>k<Tab>
 
 set grepprg=ag " Use ag for search
 set tags=./tags; 
 
 syntax enable
 set t_Co=256
+set background=dark
 colorscheme molokai
 
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
-set hlsearch
 set incsearch
 
 set autoindent 
+set smartindent
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -79,3 +83,5 @@ if exists("+undofile")
 		set undodir+=~/.vim/undo//
 		set undofile
 endif
+
+set secure

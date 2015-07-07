@@ -18,4 +18,10 @@ let g:rails_projections = {
       \ "affinity": "controller",
       \ "alternate": "spec/controllers/%s_controller_spec.rb",
       \ "test": "spec/controllers/%s_controller_spec.rb",
-      \ "template": "class %SController < ApplicationController\nend"}}
+      \ "template": "class %SController < ApplicationController\nend"},
+      \
+      \ "app/assets/javascripts/components/*.js.coffee": {
+      \ "command": "react",
+      \ "affinity": "view",
+      \ "alternate": "app/controllers/%s_controller.rb",
+      \ "template": "@%S = "}}
