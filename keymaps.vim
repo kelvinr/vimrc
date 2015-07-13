@@ -3,15 +3,19 @@ let mapleader = ","
 inoremap <Leader>f <C-O>a
 inoremap <Leader>d <C-O>B
 inoremap <Leader>r <C-O>k
+inoremap <Leader>e <C-O>j
 
 noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>x :x<CR>
 
-map <Leader>e %
+map <Leader>g %
 
 nnoremap<Leader>v :vsplit<CR>
 nnoremap<Leader>s :split<CR>
+noremap<Leader>t :tab split<CR>
+
+inoremap<Leader>v <CR><CR><C-O>k<Tab>
 
 " System clipboard
 nnoremap <Leader>a "+p
@@ -26,11 +30,9 @@ map <Leader>5 :call RunCurrentSpecFile()<CR>
 map <Leader>4 :call RunNearestSpec()<CR>
 map <Leader>3 :call RunAllSpecs()<CR>
 
-map <Leader>t :!mix test<CR>
-
 " Insert line in Normal-mode
-nnoremap <M-u> o<ESC>
-nnoremap <M-i> O<ESC>
+nnoremap <C-U> o<ESC>
+nnoremap <C-I> O<ESC>
 
 " Move line up/down and reindent
 nnoremap <M-j> :m .+1<CR>==
@@ -41,15 +43,6 @@ inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
 
-autocmd Filetype rb nnoremap <buffer> <F4> ^i#<Esc> 
-autocmd Filetype rb inoremap <buffer> <F4> <C-O>I#
-autocmd Filetype rb vnoremap <buffer> <F4> :s/^/#/<CR>
-
-autocmd Filetype js,jsx nnoremap <buffer> <F4> ^i//<Esc> 
-autocmd Filetype js,jsx inoremap <buffer> <F4> <C-O>I//
-autocmd Filetype js,jsx vnoremap <buffer> <F4> :s/^/\/\ /<CR>
-
-map <C-F> <C-P>
 map <C-T> :NERDTreeToggle<CR>
 
 " Buffer switching

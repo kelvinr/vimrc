@@ -1,8 +1,6 @@
-set nocompatible
-runtime vundles.vim
-runtime keymaps.vim
-runtime rails.vim
-set exrc
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
 " Fix Meta key when no 8bit encoding
 let c='a'
@@ -14,10 +12,15 @@ endw
 
 set timeout ttimeoutlen=50
 
-filetype plugin indent on
-let g:html_indent_inctags = "html,body,head,tbody,p,li" 
 
-let g:AutoPairsShortcutBackInsert = '<M-a>'
+let g:html_indent_inctags = "html,body,head,tbody,p,li"
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+set ts=2 sw=2 et
+
+let g:AutoPairsShortcutBackInsert = '<C-a>'
 let g:AutoPairsShortcutFastWrap = '<Leader>d'
 let g:AutoPairs = {'|':'|', '(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
 
@@ -26,7 +29,6 @@ inoremap <Leader>d <CR><CR><C-O>k<Tab>
 set grepprg=ag " Use ag for search
 set tags=./tags; 
 
-syntax enable
 set t_Co=256
 set background=dark
 colorscheme molokai
@@ -36,17 +38,15 @@ set ignorecase
 set smartcase
 set incsearch
 
-set autoindent 
-set smartindent
 set expandtab
-set tabstop=2
 set softtabstop=2
-set shiftwidth=2
 set nu
 set linebreak
 
-let g:airline_theme='luna'
+let g:airline_theme='badwolf'
+let g:airline_detect_modified=1
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
 set cursorline
@@ -84,4 +84,5 @@ if exists("+undofile")
 		set undofile
 endif
 
-set secure
+runtime rails.vim
+runtime keymaps.vim
