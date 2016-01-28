@@ -19,8 +19,7 @@ Plugin 'airblade/vim-gitgutter'
 " Syntax highlighting
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
+Plugin 'ejholmes/vim-forcedotcom'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-haml' " Haml/Sass/SCSS 

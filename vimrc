@@ -11,11 +11,13 @@ while c <= 'z'
 endw
 
 set timeout ttimeoutlen=50
-
+set foldmethod=indent
+set re=1
+set nowrap
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 let g:html_indent_inctags = "html,body,head,tbody,p,li"
-let g:indent_guides_start_level = 2
-let g:indent_guides_enable_on_vim_startup = 1
 set ts=2 sw=2 et
 
 let g:AutoPairsShortcutBackInsert = '<C-a>'
