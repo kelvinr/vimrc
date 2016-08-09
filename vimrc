@@ -12,7 +12,6 @@ endw
 
 set timeout ttimeoutlen=50
 set foldmethod=indent
-set re=1
 set nowrap
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -23,8 +22,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size = 1
 set ts=2 sw=2 et
 
-let g:AutoPairsShortcutBackInsert = '<C-a>'
-let g:AutoPairsShortcutFastWrap = '<Leader>d'
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsShortcutBackInsert = '<Leader>d'
+"let g:AutoPairsShortcutFastWrap = '<Leader>d'
 let g:AutoPairs = {'|':'|', '(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`'}
 
 inoremap <Leader>d <CR><CR><C-O>k<Tab>
@@ -46,7 +46,6 @@ set softtabstop=2
 set nu
 set linebreak
 
-let g:airline_theme='badwolf'
 let g:airline_detect_modified=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
